@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blocktopia UI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="start-screen" id="startScreen">
+      <div class="game-menu">
+        <div class="menu-header">
+          <p class="menu-label">School Arcade</p>
+          <h1>Welcome to Block<span>topia</span></h1>
+          <p class="menu-subtitle">Pick a challenge and let the learning adventure begin!</p>
+        </div>
+        <h2>Choose Your Game</h2>
+        <div class="game-grid">
+          <button class="game-card selected" type="button" data-game="Chess">
+            <span class="game-icon">♟</span>
+            <span class="game-name">Chess</span>
+            <span class="game-tag">Strategy</span>
+          </button>
+          <button class="game-card" type="button" data-game="Math Quiz">
+            <span class="game-icon">＋</span>
+            <span class="game-name">Math Quiz</span>
+            <span class="game-tag">Numbers</span>
+          </button>
+          <button class="game-card" type="button" data-game="Quiz Bee">
+            <span class="game-icon">★</span>
+            <span class="game-name">Quiz Bee</span>
+            <span class="game-tag">General</span>
+          </button>
+          <button class="game-card" type="button" data-game="Science Lab">
+            <span class="game-icon">⚗</span>
+            <span class="game-name">Science Lab</span>
+            <span class="game-tag">Explore</span>
+          </button>
+          <button class="game-card" type="button" data-game="Spelling">
+            <span class="game-icon">A</span>
+            <span class="game-name">Spelling</span>
+            <span class="game-tag">Words</span>
+          </button>
+          <button class="game-card" type="button" data-game="Memory Match">
+            <span class="game-icon">◆</span>
+            <span class="game-name">Memory Match</span>
+            <span class="game-tag">Focus</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-shell" id="gameShell">
+      <button class="back-button" id="backButton" type="button">← BACK</button>
+      <main class="activity-screen" id="activityScreen" aria-live="polite"></main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
