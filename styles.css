@@ -99,14 +99,22 @@ h1 {
   color: #2d4655;
 }
 
+.explain-panel input,
 .explain-panel textarea {
   width: 100%;
-  resize: vertical;
-  min-height: 120px;
   border: 4px solid #1f2d3d;
   background: white;
   padding: 0.9rem 1rem;
   color: #1f2d3d;
+}
+
+.explain-panel input {
+  margin-bottom: 1rem;
+}
+
+.explain-panel textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
 .submit-button {
@@ -116,22 +124,48 @@ h1 {
   background: #5ecb7a;
 }
 
-.response-card {
+.response-list {
   margin-top: 1.75rem;
-  padding: 1.2rem 1rem;
-  border: 4px solid #1f2d3d;
-  background: #eefef4;
   text-align: left;
 }
 
-.response-card h2 {
-  margin: 0 0 0.5rem;
-  font-size: 2.2rem;
-  text-transform: uppercase;
+.response-heading {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
   color: #214b63;
 }
 
-.response-card p {
+.response-entry {
+  margin-top: 0.75rem;
+  padding: 1rem;
+  border: 3px solid #1f2d3d;
+  background: #eefef4;
+  overflow-wrap: anywhere;
+}
+
+.response-entry h3 {
+  margin: 0;
+  color: #214b63;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.response-entry .respondent-name {
+  margin: 0 0 0.35rem;
+  color: #395666;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.response-entry .reason-label {
+  margin: 0.75rem 0 0.2rem;
+  color: #214b63;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.response-entry .response-reason {
   margin: 0;
   line-height: 1.6;
   color: #395666;
@@ -157,9 +191,5 @@ h1 {
 
   body {
     padding: 16px;
-  }
-
-  .response-card h2 {
-    font-size: 1.5rem;
   }
 }

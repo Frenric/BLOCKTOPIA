@@ -17,16 +17,17 @@
         </div>
 
         <div class="explain-panel hidden" id="explainPanel">
+          <label for="nameInput">Name (optional)</label>
+          <input id="nameInput" type="text" maxlength="40" autocomplete="nickname" placeholder="Leave blank to post anonymously" />
           <label for="reasonInput">Why?</label>
           <textarea id="reasonInput" rows="4" placeholder="Tell us your reason..."></textarea>
           <button class="submit-button" id="submitReason" type="button">Submit</button>
         </div>
 
-        <div class="response-card hidden" id="responseCard" aria-live="polite">
-          <p class="response-label">Your answer</p>
-          <h2 id="selectedAnswerText">Work with a team</h2>
-          <p id="reasonText">I like collaborating because ideas become stronger when people share feedback.</p>
-        </div>
+        <section class="response-list hidden" id="responseCard" aria-label="Responses" aria-live="polite">
+          <h2 class="response-heading">Responses</h2>
+          <div id="responsesList"></div>
+        </section>
       </section>
     </main>
 

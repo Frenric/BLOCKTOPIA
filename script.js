@@ -1,10 +1,10 @@
 const choiceButtons = document.querySelectorAll('.choice-button');
 const explainPanel = document.getElementById('explainPanel');
+const nameInput = document.getElementById('nameInput');
 const reasonInput = document.getElementById('reasonInput');
 const submitReason = document.getElementById('submitReason');
 const responseCard = document.getElementById('responseCard');
-const selectedAnswerText = document.getElementById('selectedAnswerText');
-const reasonText = document.getElementById('reasonText');
+const responsesList = document.getElementById('responsesList');
 
 let selectedAnswer = '';
 
@@ -18,12 +18,13 @@ function chooseAnswer(event) {
 
   clickedButton.classList.add('selected');
   explainPanel.classList.remove('hidden');
-  responseCard.classList.add('hidden');
+  nameInput.value = '';
   reasonInput.value = '';
   reasonInput.focus();
 }
 
 function submitAnswer() {
+  const name = nameInput.value.trim() || 'Anonymous';
   const reason = reasonInput.value.trim();
 
   if (reason === '') {
@@ -31,8 +32,26 @@ function submitAnswer() {
     return;
   }
 
-  selectedAnswerText.textContent = selectedAnswer;
-  reasonText.textContent = reason;
+  const response = document.createElement('article');
+  response.classList.add('response-entry');
+
+  const respondent = document.createElement('p');
+  respondent.classList.add('respondent-name');
+  respondent.textContent = name;
+
+  const answer = document.createElement('h3');
+  answer.textContent = selectedAnswer;
+
+  const reasonLabel = document.createElement('p');
+  reasonLabel.classList.add('reason-label');
+  reasonLabel.textContent = 'Why I chose it';
+
+  const responseReason = document.createElement('p');
+  responseReason.classList.add('response-reason');
+  responseReason.textContent = reason;
+
+  response.append(respondent, answer, reasonLabel, responseReason);
+  responsesList.append(response);
   responseCard.classList.remove('hidden');
   explainPanel.classList.add('hidden');
 }
