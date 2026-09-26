@@ -1,37 +1,34 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blocktopia UI</title>
+    <title>Would You Rather? — Communication Edition</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Start screen with the Blocktopia logo and game choices. -->
-    <div class="start-screen" id="startScreen">
-      <div class="game-menu">
-        <div class="menu-header">
-          <img class="brand-image" src="blocktopia.jpg" alt="Blocktopia" />
-          <p class="menu-label">School Arcade</p>
-          <h1>Welcome to Block<span>topia</span></h1>
-          <p class="menu-subtitle">Pick a challenge and let the learning adventure begin!</p>
-        </div>
-        <h2>Choose Your Game</h2>
-        <div class="game-grid">
-          <button class="game-card selected" type="button" data-game="Memory Match">
-            <span class="game-icon">◆</span>
-            <span class="game-name">Memory Match</span>
-            <span class="game-tag">Focus</span>
-          </button>
-        </div>
-      </div>
-    </div>
+    <main class="prompt-screen" aria-live="polite">
+      <section class="prompt-card" aria-labelledby="questionTitle">
+        <h1 id="questionTitle">Would you rather work alone or with a team?</h1>
 
-    <!-- This area is filled with the selected game by script.js. -->
-    <div class="game-shell" id="gameShell">
-      <button class="back-button" id="backButton" type="button">← BACK</button>
-      <main class="activity-screen" id="activityScreen" aria-live="polite"></main>
-    </div>
+        <div class="choice-grid" role="group" aria-label="Answer choices">
+          <button class="choice-button" type="button">Work alone</button>
+          <button class="choice-button" type="button">Work with a team</button>
+        </div>
+
+        <div class="explain-panel hidden" id="explainPanel">
+          <label for="reasonInput">Why?</label>
+          <textarea id="reasonInput" rows="4" placeholder="Tell us your reason..."></textarea>
+          <button class="submit-button" id="submitReason" type="button">Submit</button>
+        </div>
+
+        <div class="response-card hidden" id="responseCard" aria-live="polite">
+          <p class="response-label">Your answer</p>
+          <h2 id="selectedAnswerText">Work with a team</h2>
+          <p id="reasonText">I like collaborating because ideas become stronger when people share feedback.</p>
+        </div>
+      </section>
+    </main>
 
     <script src="script.js"></script>
   </body>
